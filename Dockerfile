@@ -12,6 +12,6 @@ RUN chmod +x /app/test.sh && /app/test.sh
 
 FROM nginx:1.25-alpine AS serve
 WORKDIR /usr/share/nginx/html
-COPY --from=build ../api/dist ./
+COPY --from=build /api/dist ./
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
